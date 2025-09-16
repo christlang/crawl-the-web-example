@@ -1,0 +1,6 @@
+
+
+Beispiele fürs crawlen von Web-Seiten
+
+* link:browsertrix-crawler/[]
+** crawlen von http Seite die Content-Security-Policy "upgrade-insecure-requests;" enthält
