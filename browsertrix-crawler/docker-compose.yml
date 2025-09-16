@@ -1,0 +1,28 @@
+version: "3.9"
+services:
+  nginx:
+    build: ./test-nginx
+    container_name: test-nginx
+    ports:
+      - 8080:80
+    networks:
+      - testnet
+
+  crawler:
+    image: webrecorder/browsertrix-crawler:latest
+    container_name: test-crawler
+    networks:
+      - testnet
+    volumes:
+      - ./crawls:/crawls:Z
+    command:
+      [
+        "crawl",
+        "--url", "http://nginx/",
+        "--collection", "testcrawl",
+        # "--text", "--screenshot"
+      ]
+
+networks:
+  testnet:
+    driver: bridge

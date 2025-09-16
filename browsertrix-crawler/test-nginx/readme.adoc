@@ -1,0 +1,9 @@
+
+
+[source, bash]
+----
+docker build -t nginx-csp-test .
+docker run --rm -p 8080:80 nginx-csp-test
+
+http://localhost:8080
+----

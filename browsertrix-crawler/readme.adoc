@@ -1,0 +1,13 @@
+
+zum Nachvollziehen warum die `content-security-policy` `upgrade-insecure-requests;` dazu führt das Bild nicht geladen werden
+
+[source,bash]
+----
+docker compose up --build
+
+# wird alles normal geladen kein upgrade im Browser (eventuell wegen localhost?)
+browser http://localhost:8080/
+
+# cleanup
+ sudo rm -rf crawls/
+----
