@@ -1,13 +1,26 @@
 
-zum Nachvollziehen warum die `content-security-policy` `upgrade-insecure-requests;` dazu führt das Bild nicht geladen werden
+:toc:
+
+## Overview
+
+zum Nachvollziehen warum die `content-security-policy` `upgrade-insecure-requests;` (wird in link:test-nginx/nginx.conf[nginx.conf] gesetzt) dazu führt das Bild nicht geladen werden
 
 [source,bash]
 ----
 docker compose up --build
 
+# in crawls/collections/testcrawl/archive kann man die warc Datei finden
+# di eman in https://replayweb.page/ zum ansehen hochladen kann
+
 # wird alles normal geladen kein upgrade im Browser (eventuell wegen localhost?)
 browser http://localhost:8080/
 
 # cleanup
- sudo rm -rf crawls/
+sudo rm -rf crawls/
 ----
+
+## Doku
+
+* https://crawler.docs.browsertrix.com/user-guide/
+* https://github.com/webrecorder/browsertrix-crawler
+* Viewer: https://replayweb.page/

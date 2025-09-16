@@ -1,4 +1,3 @@
-version: "3.9"
 services:
   nginx:
     build: ./test-nginx
@@ -9,18 +8,20 @@ services:
       - testnet
 
   crawler:
-    image: webrecorder/browsertrix-crawler:1.7.0
+    image: webrecorder/browsertrix-crawler:1.7.1
     container_name: test-crawler
     networks:
       - testnet
     volumes:
       - ./crawls:/crawls:Z
     command:
+      # https://crawler.docs.browsertrix.com/user-guide/cli-options/
       [
         "crawl",
         "--url", "http://nginx/",
         "--collection", "testcrawl",
-        # "--text", "--screenshot"
+        "--text",
+        "--screenshot"
       ]
 
 networks:
