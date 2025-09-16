@@ -9,7 +9,7 @@ services:
       - testnet
 
   crawler:
-    image: webrecorder/browsertrix-crawler:latest
+    image: webrecorder/browsertrix-crawler:1.7.0
     container_name: test-crawler
     networks:
       - testnet
